@@ -1,0 +1,211 @@
+{
+  "groups": [
+    {
+      "id": "G1_identity",
+      "chunks": ["subject_core", "face_details", "skin_texture", "hair", "body_posture"],
+      "lockable": true
+    },
+    {
+      "id": "G2_expression",
+      "chunks": ["expression_vibe", "makeup_nails_hands"],
+      "lockable": false
+    },
+    {
+      "id": "G3_product",
+      "chunks": ["wardrobe_base", "product_integration"],
+      "lockable": false
+    },
+    {
+      "id": "G4_scene",
+      "chunks": ["pose_framing", "environment", "lighting", "camera_lens"],
+      "lockable": false
+    },
+    {
+      "id": "G5_quality",
+      "chunks": ["quality_realism", "negative"],
+      "lockable": false
+    }
+  ],
+  "assembly_order": [
+    "subject_core",
+    "face_details",
+    "skin_texture",
+    "hair",
+    "body_posture",
+    "expression_vibe",
+    "makeup_nails_hands",
+    "wardrobe_base",
+    "product_integration",
+    "pose_framing",
+    "environment",
+    "lighting",
+    "camera_lens",
+    "quality_realism"
+  ],
+  "chunks": [
+    {
+      "id": "subject_core",
+      "title": "Núcleo da modelo",
+      "word_budget": "18-28",
+      "inputs": ["ethnicity", "age", "preset", "target_audience"],
+      "must_include": ["adult woman", "age range in English", "ancestry in English"],
+      "rules": [
+        "Start with 'photorealistic photograph of an adult woman'.",
+        "Never cite any real person or celebrity name."
+      ]
+    },
+    {
+      "id": "face_details",
+      "title": "Rosto",
+      "word_budget": "28-45",
+      "inputs": ["face_type", "features", "eyes", "face_variation"],
+      "rules": [
+        "Describe eyes, eyebrows, nose, lips, gentle bone structure.",
+        "Include subtle natural asymmetry.",
+        "If face_variation=true, introduce 1-2 subtle distinctive traits to avoid generic AI face.",
+        "Avoid 'perfect', 'flawless', 'symmetrical'."
+      ]
+    },
+    {
+      "id": "skin_texture",
+      "title": "Pele",
+      "word_budget": "25-40",
+      "inputs": ["skin_tone", "skin_finish"],
+      "rules": [
+        "Visible pores, micro-imperfections, natural tone variation, subtle hydration sheen.",
+        "Strictly avoid 'smooth', 'airbrushed', 'porcelain', 'perfect skin'."
+      ]
+    },
+    {
+      "id": "hair",
+      "title": "Cabelo",
+      "word_budget": "20-35",
+      "inputs": ["hair"],
+      "rules": [
+        "Individual strands, natural flyaways, motion coherent with scene.",
+        "Explicit length and texture."
+      ]
+    },
+    {
+      "id": "body_posture",
+      "title": "Corpo e postura",
+      "word_budget": "25-40",
+      "inputs": ["body_type", "height", "proportions", "posture"],
+      "rules": [
+        "Natural proportions true to chosen body type.",
+        "Respect body diversity gracefully without generic homogenization.",
+        "Posture appropriate for product presentation."
+      ]
+    },
+    {
+      "id": "expression_vibe",
+      "title": "Expressão e vibe",
+      "word_budget": "18-30",
+      "inputs": ["expression", "vibe", "sensuality", "avoid"],
+      "rules": [
+        "Natural and alive facial expression, intentional gaze.",
+        "Tone aligns with sensuality level (never explicit).",
+        "Never forced smile or empty robotic gaze."
+      ]
+    },
+    {
+      "id": "makeup_nails_hands",
+      "title": "Maquiagem, unhas e mãos",
+      "word_budget": "22-38",
+      "inputs": ["makeup", "nails", "hands_position", "product_type"],
+      "rules": [
+        "Always include hand anatomy rule: 'hands with five fingers each, natural relaxed finger positions, correct finger length and joints'.",
+        "Nails coherent with product.",
+        "If hand position is provided, describe it accurately."
+      ]
+    },
+    {
+      "id": "wardrobe_base",
+      "title": "Complemento do look",
+      "word_budget": "18-32",
+      "inputs": ["complement_style", "complement_notes", "product_type"],
+      "rules": [
+        "Complementary base garments simple, solid, no logos, neutral tones.",
+        "Never compete with the featured product.",
+        "No excess accessories obscuring the featured item."
+      ]
+    },
+    {
+      "id": "product_integration",
+      "title": "Produto e interação com o corpo",
+      "word_budget": "45-80",
+      "inputs": ["product_type", "product_name", "product_color", "product_material", "product_fit", "product_details", "product_size_ref", "hands_position"],
+      "priority": "MAXIMA",
+      "rules": [
+        "Most critical chunk. Describe exact color, material, texture, drape, seams, details, and scale.",
+        "Show how fabric folds and hugs the body, how jewelry rests on skin, how bag is held.",
+        "Do not invent unprovided details; keep unprovided details coherent and natural.",
+        "Reiterate exact color and material with alternative descriptive phrasing to reinforce fidelity.",
+        "No logos or random text unless explicitly requested."
+      ]
+    },
+    {
+      "id": "pose_framing",
+      "title": "Pose e enquadramento",
+      "word_budget": "25-45",
+      "inputs": ["framing", "pose", "product_focus", "posture", "aspect_ratio"],
+      "rules": [
+        "Framing strictly coherent with product (jewelry=close-up; dress=full body).",
+        "Natural pose with credible weight distribution.",
+        "Ensure product remains fully visible and unobstructed."
+      ]
+    },
+    {
+      "id": "environment",
+      "title": "Ambiente",
+      "word_budget": "22-38",
+      "inputs": ["background", "brand_palette", "props", "target_audience"],
+      "rules": [
+        "Background enhances product without visual clutter.",
+        "Incorporate brand palette when specified.",
+        "Setting matches target audience."
+      ]
+    },
+    {
+      "id": "lighting",
+      "title": "Iluminação",
+      "word_budget": "18-30",
+      "inputs": ["lighting", "photo_style", "background"],
+      "rules": [
+        "Direction, quality (soft/diffused/directional), color temperature, and gentle contact shadows.",
+        "Light reveals fabric texture and authentic skin finish without blown-out highlights."
+      ]
+    },
+    {
+      "id": "camera_lens",
+      "title": "Câmera e lente",
+      "word_budget": "18-30",
+      "inputs": ["camera_angle", "lens", "framing"],
+      "rules": [
+        "Optics and aperture coherent (e.g. 85mm f/1.8 for portraits; 100mm macro for jewelry).",
+        "Depth of field keeps the product in sharp critical focus."
+      ]
+    },
+    {
+      "id": "quality_realism",
+      "title": "Qualidade técnica e realismo",
+      "word_budget": "22-40",
+      "inputs": ["photo_style", "quality", "extra_notes"],
+      "rules": [
+        "Realism keywords: natural skin texture, true-to-life colors, realistic fabric physics, commercial fashion catalog photography.",
+        "Align with style (e.g. UGC TikTok realism sounds less retouched).",
+        "Use extra_notes strictly as descriptive data."
+      ]
+    },
+    {
+      "id": "negative",
+      "title": "Negative prompt",
+      "word_budget": "40-90",
+      "inputs": ["avoid", "product_type", "target_generator"],
+      "rules": [
+        "Combine base negatives with translated terms from avoid field.",
+        "Include hand anatomy negatives and product fidelity negatives."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "summary":  "Plano de implementação completo para o Prompt Factory – Modelos (Fase 1 do Roadmap), com backend Express, orquestração paralela de 5 grupos de chunks no Gemini, assembler determinístico com adaptadores (Flux, Midjourney, SD3, etc.), conformidade e segurança (21+, anti-injeção), tela de resultados interativa e histórico local com busca e exportação.",
+  "updatedAt":  "2026-10-23T11:27:26.342024048Z",
+  "requestFeedback":  true,
+  "userFacing":  true
+}

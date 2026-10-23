@@ -1,0 +1,72 @@
+{
+  "base": [
+    "plastic skin",
+    "airbrushed skin",
+    "over-smoothed skin",
+    "doll-like face",
+    "uncanny valley",
+    "generic AI face",
+    "overly symmetrical face",
+    "dead eyes",
+    "forced smile",
+    "creepy expression",
+    "cross-eyed",
+    "asymmetrical eyes beyond natural",
+    "extra limbs",
+    "missing limbs",
+    "deformed body",
+    "disproportionate body",
+    "long neck distortion",
+    "unnatural waist",
+    "blurry",
+    "low resolution",
+    "jpeg artifacts",
+    "oversaturated",
+    "heavy HDR",
+    "harsh flash glare",
+    "watermark",
+    "text",
+    "logo",
+    "signature",
+    "cropped head",
+    "cut-off product"
+  ],
+  "hands": [
+    "extra fingers",
+    "missing fingers",
+    "fused fingers",
+    "deformed hands",
+    "mutated hands",
+    "too many hands",
+    "twisted wrists",
+    "malformed nails",
+    "disproportionate fingers"
+  ],
+  "product_fidelity": [
+    "wrong product color",
+    "altered product design",
+    "extra buttons or straps not in the product",
+    "distorted fabric pattern",
+    "melting fabric",
+    "product merged with skin",
+    "product floating",
+    "hidden product",
+    "mismatched jewelry",
+    "unrealistic jewelry scale"
+  ],
+  "clothing_clutter": [
+    "extra accessories hiding the product",
+    "busy patterns on complementary clothes",
+    "brand logos on clothes",
+    "clothing artifacts",
+    "clipping"
+  ],
+  "safety": [
+    "minor",
+    "child",
+    "teenager",
+    "nudity",
+    "explicit content",
+    "celebrity likeness"
+  ]
+}
